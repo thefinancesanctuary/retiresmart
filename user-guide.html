@@ -64,12 +64,12 @@
 
 <nav class="sidebar">
   <div class="brand">RetireSmart</div>
-  <div class="version">Complete User Guide · v1.0</div>
+  <div class="version">Complete User Guide · v1.2</div>
   <h2>Getting Started</h2>
   <a href="#overview">App Overview</a>
   <a href="#onboarding">First Launch</a>
   <a href="#navigation">Navigation</a>
-  <h2>Holdings Tab</h2>
+  <h2>Portfolio Tab</h2>
   <a href="#add-holding">Adding Holdings</a>
   <a href="#screenshot-import">Screenshot Import</a>
   <a href="#edit-holding">Editing Holdings</a>
@@ -77,8 +77,8 @@
   <a href="#other-assets">Other Assets</a>
   <a href="#liabilities">Liabilities</a>
   <a href="#shared-assets">Shared Household</a>
-  <a href="#csv-export">Exporting Data</a>
-  <h2>Plan Tab</h2>
+  <a href="#pdf-export">Exporting to PDF</a>
+  <h2>Planner Tab</h2>
   <a href="#net-worth-graph">Net Worth Graph</a>
   <a href="#goal-tab">Goal Planner</a>
   <a href="#forecast-tab">Forecast (Monte Carlo)</a>
@@ -120,12 +120,12 @@
     <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
     <tr><td>Holdings tracked</td><td>Up to 3</td><td>Unlimited</td></tr>
     <tr><td>Asset types</td><td>Real Estate only</td><td>All types</td></tr>
-    <tr><td>Liabilities</td><td>Mortgage &amp; Taxes only</td><td>All types</td></tr>
+    <tr><td>Liabilities</td><td>Mortgage only</td><td>All types</td></tr>
     <tr><td>Monte Carlo Forecast</td><td>❌</td><td>✅</td></tr>
     <tr><td>Drawdown Planner</td><td>❌</td><td>✅</td></tr>
     <tr><td>Family profiles</td><td>1 profile</td><td>Up to 5 profiles</td></tr>
     <tr><td>Shared Household Assets</td><td>❌</td><td>✅</td></tr>
-    <tr><td>CSV Export</td><td>✅</td><td>✅</td></tr>
+    <tr><td>PDF Export</td><td>✅</td><td>✅</td></tr>
     <tr><td>DCA Reminders</td><td>✅</td><td>✅</td></tr>
   </table>
 
@@ -141,11 +141,11 @@
   <p>RetireSmart has three main tabs at the top of the screen:</p>
   <table>
     <tr><th>Tab</th><th>What it does</th></tr>
-    <tr><td><span class="screen-label">Holdings</span></td><td>Your investment portfolio, other assets, liabilities, and net worth balance sheet</td></tr>
-    <tr><td><span class="screen-label">Plan</span></td><td>Retirement goal, Monte Carlo forecast, drawdown analysis, and net worth history</td></tr>
-    <tr><td><span class="screen-label">⚙️ Settings</span></td><td>Dark mode, privacy policy, support, and app info</td></tr>
+    <tr><td><span class="screen-label">Portfolio</span></td><td>Your investment holdings, other assets, liabilities, shared household, and net worth balance sheet</td></tr>
+    <tr><td><span class="screen-label">Planner</span></td><td>Retirement goal, Monte Carlo forecast, drawdown analysis, and net worth history graph</td></tr>
+    <tr><td><span class="screen-label">Settings</span></td><td>Dark mode, privacy policy, user guide, support, and app info</td></tr>
   </table>
-  <p>Within the <strong>Plan</strong> tab there are three sub-tabs:</p>
+  <p>Within the <strong>Planner</strong> tab there are three sub-tabs:</p>
   <ul>
     <li><strong>Goal</strong> — Set your retirement target and inputs</li>
     <li><strong>Forecast</strong> — Monte Carlo simulation <span class="badge pro">Pro</span></li>
@@ -156,7 +156,7 @@
   <h2 id="add-holding">Adding Holdings Manually</h2>
   <p>A "holding" is any stock, ETF, index fund, or other security you own.</p>
 
-  <div class="step"><span class="step-num">1</span>On the <strong>Holdings</strong> tab, tap <strong>+ Add Holding</strong> at the top.</div>
+  <div class="step"><span class="step-num">1</span>On the <strong>Portfolio</strong> tab, tap <strong>+ Add Holding</strong> at the top.</div>
   <div class="step"><span class="step-num">2</span>Type the <strong>ticker symbol</strong> — e.g. <code>AAPL</code> for Apple, <code>SPY</code> for the S&amp;P 500 ETF, <code>D05.SI</code> for DBS (Singapore). The app will fetch the live price and full name automatically.</div>
   <div class="step"><span class="step-num">3</span>Enter your <strong>number of shares</strong>.</div>
   <div class="step"><span class="step-num">4</span>Tap <strong>Save</strong>. Your holding appears in the list with a live price and total value.</div>
@@ -179,7 +179,7 @@
   <h2 id="screenshot-import">Importing Holdings from a Screenshot <span class="badge pro">Pro</span></h2>
   <p>Instead of typing each ticker manually, you can photograph or upload a screenshot of your broker's portfolio page and RetireSmart will extract all positions automatically using AI.</p>
 
-  <div class="step"><span class="step-num">1</span>On the Holdings screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
+  <div class="step"><span class="step-num">1</span>On the Portfolio screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
   <div class="step"><span class="step-num">2</span>Choose <strong>Take Photo</strong> (point your camera at your broker app) or <strong>Choose from Library</strong> (if you already have a screenshot).</div>
   <div class="step"><span class="step-num">3</span>You can select <strong>up to 3 images</strong> at once to import from multiple pages.</div>
   <div class="step"><span class="step-num">4</span>The AI reads the screenshot and extracts all ticker symbols and share counts. A review screen shows what it found.</div>
@@ -269,7 +269,7 @@
   </table>
 
   <h3>How to add an Other Asset</h3>
-  <div class="step"><span class="step-num">1</span>Scroll down on the Holdings screen past your stock portfolio to the <strong>Other Assets</strong> card.</div>
+  <div class="step"><span class="step-num">1</span>Scroll down on the Portfolio screen past your stock portfolio to the <strong>Other Assets</strong> card.</div>
   <div class="step"><span class="step-num">2</span>Tap <strong>+ Add Asset</strong> or tap the <strong>+</strong> button next to a specific category (e.g. 🏠 Real Estate).</div>
   <div class="step"><span class="step-num">3</span>Choose the asset type, enter a name, and enter the current value.</div>
   <div class="step"><span class="step-num">4</span>For CPF/Pension types, you can also enter a <strong>monthly payout amount</strong> — this shows up as passive income in your retirement plan.</div>
@@ -285,7 +285,7 @@
   <table>
     <tr><th>Type</th><th>Icon</th><th>Examples</th><th>Plan</th></tr>
     <tr><td>Mortgage</td><td>🏠</td><td>Home loan, apartment loan</td><td><span class="badge free">Free</span></td></tr>
-    <tr><td>Taxes</td><td>🧾</td><td>Income tax, property tax</td><td><span class="badge free">Free</span></td></tr>
+    <tr><td>Taxes</td><td>🧾</td><td>Income tax, property tax</td><td><span class="badge pro">Pro</span></td></tr>
     <tr><td>Car Loan</td><td>🚗</td><td>Vehicle financing</td><td><span class="badge pro">Pro</span></td></tr>
     <tr><td>Student Loan</td><td>🎓</td><td>University, study loans</td><td><span class="badge pro">Pro</span></td></tr>
     <tr><td>Credit Card</td><td>💳</td><td>Outstanding card balance</td><td><span class="badge pro">Pro</span></td></tr>
@@ -293,7 +293,7 @@
   </table>
 
   <h3>How to add a liability</h3>
-  <div class="step"><span class="step-num">1</span>Scroll down on the Holdings screen to the <strong>Liabilities</strong> card.</div>
+  <div class="step"><span class="step-num">1</span>Scroll down on the Portfolio screen to the <strong>Liabilities</strong> card.</div>
   <div class="step"><span class="step-num">2</span>Tap <strong>+ Add Liability</strong> or the <strong>+</strong> button next to a specific category.</div>
   <div class="step"><span class="step-num">3</span>Enter the <strong>outstanding balance</strong> (how much you still owe) and an optional <strong>monthly repayment</strong> amount.</div>
   <div class="step"><span class="step-num">4</span>Tap <strong>Save</strong>.</div>
@@ -302,25 +302,42 @@
 
   <!-- SHARED ASSETS -->
   <h2 id="shared-assets">Shared Household Assets <span class="badge pro">Pro</span></h2>
-  <p>Shared Household is a special section visible to <em>all</em> family members — for assets owned jointly by everyone, like the family home or a joint investment account. The value is split equally across all members.</p>
+  <p>Shared Household is a special section visible to <em>all</em> family members — for assets jointly owned across the family, like a family home or a joint investment account. Unlike regular assets, you can assign a precise ownership percentage to each member — so a 60/40 split or even 100/0 (where one member has no share) is fully supported.</p>
 
   <h3>How to add a shared asset</h3>
   <div class="step"><span class="step-num">1</span>You must have 2 or more family profiles and be on Pro.</div>
-  <div class="step"><span class="step-num">2</span>Scroll down to <strong>🏠 Shared Household</strong> between Other Assets and Liabilities.</div>
-  <div class="step"><span class="step-num">3</span>Tap <strong>+ Add Shared Asset</strong>.</div>
-  <div class="step"><span class="step-num">4</span>Enter the asset name, then its total value. The app splits it equally across all members.</div>
+  <div class="step"><span class="step-num">2</span>Go to the <strong>Portfolio</strong> tab and scroll to <strong>🏠 Shared Household</strong> (between Other Assets and Liabilities).</div>
+  <div class="step"><span class="step-num">3</span>Tap <strong>+ Add Shared Asset</strong>. A bottom sheet modal opens.</div>
+  <div class="step"><span class="step-num">4</span>Enter the <strong>asset name</strong> (e.g. "Family Home") and the <strong>total value</strong>.</div>
+  <div class="step"><span class="step-num">5</span>Under <strong>OWNERSHIP %</strong>, each family member is listed with a percentage field. Adjust each person's share — e.g. 60% for one, 40% for another. Set to 0% if a member has no ownership at all.</div>
+  <div class="step"><span class="step-num">6</span>The <strong>Total</strong> at the bottom turns green when the percentages add up to exactly 100%. Tap <strong>Save Asset</strong>.</div>
 
-  <!-- CSV EXPORT -->
-  <h2 id="csv-export">Exporting Your Data to CSV</h2>
-  <p>You can export all your holdings, assets, and liabilities as a CSV file — compatible with Excel, Google Sheets, and Numbers.</p>
-  <div class="step"><span class="step-num">1</span>Scroll to the very bottom of the Holdings screen.</div>
-  <div class="step"><span class="step-num">2</span>Tap <strong>📤 Export to CSV</strong>.</div>
-  <div class="step"><span class="step-num">3</span>The share sheet opens — save the file or share it to any app (email, Google Drive, etc.).</div>
-  <p>The CSV file contains three sections: Holdings (ticker, name, shares, price, value), Other Assets (name, type, value), and Liabilities (name, type, balance, repayment).</p>
+  <div class="tip"><p>💡 Each member's dollar value (e.g. "Alice · 60% · $360,000") is shown as a chip under the asset name so you can see the split at a glance. The default split is equal across all members — adjust from there.</p></div>
+  <div class="warning"><p>⚠️ The ownership must total exactly 100% before you can save. If the total is red, adjust the percentages until they balance.</p></div>
+
+  <h3>Deleting a shared asset</h3>
+  <p>Tap the <strong>✕</strong> button on the right of any shared asset row to delete it.</p>
+
+  <!-- PDF EXPORT -->
+  <h2 id="pdf-export">Exporting Your Portfolio as a PDF</h2>
+  <p>You can export a formatted PDF report of your entire portfolio — holdings, other assets, liabilities, and a net worth summary — and share or save it anywhere.</p>
+  <div class="step"><span class="step-num">1</span>Scroll to the very bottom of the Portfolio screen.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>📄 Export as PDF</strong>.</div>
+  <div class="step"><span class="step-num">3</span>The system share sheet opens — save the PDF to your files, email it, or share it to any app.</div>
+
+  <p>The PDF report includes:</p>
+  <ul>
+    <li><strong>Holdings table</strong> — ticker, name, shares, price, and value for each position</li>
+    <li><strong>Other Assets table</strong> — name, type, and value</li>
+    <li><strong>Liabilities table</strong> — name, type, balance, and monthly payment</li>
+    <li><strong>Net Worth summary</strong> — total assets, total liabilities, and net worth in a highlighted box</li>
+    <li>Date stamp and RetireSmart branding at the top</li>
+  </ul>
+  <div class="tip"><p>💡 On Android you can also "Print" the PDF and choose "Save as PDF" from the print dialog for a clean saved copy.</p></div>
 
   <!-- NET WORTH GRAPH -->
   <h2 id="net-worth-graph">Net Worth History Graph</h2>
-  <p>The Plan tab shows a line graph of your net worth over time. It records one snapshot per day when you open the app and refresh your prices.</p>
+  <p>The Planner tab shows a line graph of your net worth over time. It records one snapshot per day when you open the app and refresh your prices.</p>
   <ul>
     <li>The graph appears automatically once you have at least 2 snapshots (i.e., you've opened the app on at least 2 different days with holdings)</li>
     <li>It tracks up to 365 days of history</li>
@@ -417,7 +434,7 @@
   <!-- NOTIFICATIONS -->
   <h2 id="notifications">DCA Monthly Reminders</h2>
   <p>Set a monthly push notification to remind you to make your regular investment (Dollar Cost Averaging).</p>
-  <div class="step"><span class="step-num">1</span>Go to <strong>Plan</strong> tab → scroll to <strong>NOTIFICATIONS</strong> section.</div>
+  <div class="step"><span class="step-num">1</span>Go to <strong>Planner</strong> tab → scroll to <strong>NOTIFICATIONS</strong> section.</div>
   <div class="step"><span class="step-num">2</span>Toggle on <strong>Monthly Investment Reminder</strong>.</div>
   <div class="step"><span class="step-num">3</span>Grant notification permission when prompted.</div>
   <div class="step"><span class="step-num">4</span>Tap the day number you want to receive the reminder each month (e.g. tap <strong>1</strong> for the 1st of every month).</div>
@@ -463,10 +480,11 @@
 
   <!-- SETTINGS -->
   <h2 id="settings">Settings Screen</h2>
-  <p>Tap <strong>⚙️ Settings</strong> in the main tab bar to access:</p>
+  <p>Tap <strong>Settings</strong> in the main tab bar to access:</p>
   <ul>
     <li><strong>Subscription status</strong> — shows Free or Pro, with an Upgrade button for free users</li>
     <li><strong>Dark Mode toggle</strong> — switch between light and dark themes</li>
+    <li><strong>User Guide</strong> — opens this guide in your browser</li>
     <li><strong>Privacy Policy</strong> — opens in your browser</li>
     <li><strong>Contact Support</strong> — opens your email app</li>
     <li><strong>Rate on Google Play</strong> — leave a review</li>
@@ -474,11 +492,11 @@
   </ul>
 
   <h2 id="theme">Dark / Light Mode</h2>
-  <p>RetireSmart fully supports both dark and light mode. Toggle it in <strong>⚙️ Settings → Dark Mode</strong>. Your preference is saved and restored on every launch.</p>
+  <p>RetireSmart fully supports both dark and light mode. Toggle it in <strong>Settings → Dark Mode</strong>. Your preference is saved and restored on every launch.</p>
 
   <!-- UPGRADE -->
   <h2 id="upgrade">Upgrading to Pro</h2>
-  <p>Tap <strong>Upgrade</strong> in Settings, or tap the upgrade banner on the Holdings screen, or tap the 🔒 lock on any Pro feature.</p>
+  <p>Tap <strong>Upgrade</strong> in Settings, or tap the upgrade banner on the Portfolio screen, or tap the 🔒 lock on any Pro feature.</p>
 
   <h3>Pricing</h3>
   <table>
@@ -524,7 +542,7 @@
   <p>Since RetireSmart stores everything locally, "deleting your account" means uninstalling the app. There is no server-side account to delete. Go to <strong>Holdings → Sign out</strong> to clear your local session, or simply uninstall the app.</p>
 
   <h3>I switched to a new phone — how do I transfer my data?</h3>
-  <p>Data is stored locally and doesn't currently sync between devices. Use the <strong>📤 Export to CSV</strong> function to export your holdings before switching phones, then re-enter them manually on the new device. Cloud sync is on the roadmap.</p>
+  <p>Data is stored locally and doesn't currently sync between devices. Use the <strong>📄 Export as PDF</strong> function to save a snapshot of your portfolio before switching phones, then re-enter them manually on the new device. Cloud sync is on the roadmap.</p>
 
   <h3>The "Upgrade to Pro" button isn't working</h3>
   <p>RevenueCat (the payment system) requires a production build to process real payments — it won't work in development/Expo Go mode. Once the app is published on the App Store or Google Play, purchases will work correctly.</p>

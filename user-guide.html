@@ -64,7 +64,7 @@
 
 <nav class="sidebar">
   <div class="brand">RetireSmart</div>
-  <div class="version">Complete User Guide · v1.2</div>
+  <div class="version">Complete User Guide · v1.3</div>
   <h2>Getting Started</h2>
   <a href="#overview">App Overview</a>
   <a href="#onboarding">First Launch</a>
@@ -72,7 +72,10 @@
   <h2>Portfolio Tab</h2>
   <a href="#add-holding">Adding Holdings</a>
   <a href="#screenshot-import">Screenshot Import</a>
+  <a href="#batch-import">Batch CSV Import</a>
   <a href="#edit-holding">Editing Holdings</a>
+  <a href="#price-alerts">Price Alerts</a>
+  <a href="#sparkline">12-Month Sparkline</a>
   <a href="#sections">Organising Sections</a>
   <a href="#other-assets">Other Assets</a>
   <a href="#liabilities">Liabilities</a>
@@ -87,6 +90,7 @@
   <a href="#streak">Investment Streak</a>
   <h2>Family Profiles</h2>
   <a href="#family-overview">Family Overview</a>
+  <a href="#family-pdf">Family Report PDF</a>
   <a href="#add-member">Adding Members</a>
   <a href="#switching">Switching Profiles</a>
   <a href="#child-profile">Child Profiles</a>
@@ -188,6 +192,19 @@
   <div class="tip"><p>💡 Works best with clean, high-resolution screenshots. Make sure the ticker symbols are clearly visible. Supported brokers include Interactive Brokers, Tiger Brokers, Moomoo, TD Ameritrade, and most others.</p></div>
   <div class="warning"><p>⚠️ The AI import uses Google Gemini Vision. It reads ticker symbols and share counts but does NOT import prices — prices are always fetched live from Yahoo Finance.</p></div>
 
+  <!-- BATCH CSV IMPORT -->
+  <h2 id="batch-import">Batch Import via CSV Paste <span class="badge pro">Pro</span></h2>
+  <p>If you already know your tickers and share counts, you can paste a comma-separated list to import multiple holdings at once — no screenshot or camera needed.</p>
+
+  <div class="step"><span class="step-num">1</span>On the Portfolio screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>Paste list</strong> to switch to text input mode.</div>
+  <div class="step"><span class="step-num">3</span>Enter your holdings one per line in <code>TICKER,SHARES</code> format — for example:
+    <br/><code>AAPL,100</code><br/><code>VTI,50</code><br/><code>D05.SI,200</code>
+  </div>
+  <div class="step"><span class="step-num">4</span>Tap <strong>Import</strong>. The review screen appears — deselect any rows you don't want, then tap <strong>Add Holdings</strong>.</div>
+
+  <div class="tip"><p>💡 You can also use a space instead of a comma: <code>AAPL 100</code> works too. Each line is one holding.</p></div>
+
   <!-- EDIT HOLDING -->
   <h2 id="edit-holding">Editing and Deleting Holdings</h2>
 
@@ -223,6 +240,32 @@
 
   <h3>Undo</h3>
   <p>After any change (add, edit, delete, reorder), tap <strong>↩ Undo</strong> in the top bar to reverse the last action.</p>
+
+  <!-- PRICE ALERTS -->
+  <h2 id="price-alerts">Price Alerts</h2>
+  <p>Set a price threshold on any holding and RetireSmart will notify you with a banner the next time prices are refreshed and that threshold is crossed.</p>
+
+  <h3>Setting an alert</h3>
+  <div class="step"><span class="step-num">1</span>Tap a holding row to open the edit modal.</div>
+  <div class="step"><span class="step-num">2</span>Scroll down to the <strong>Price Alert</strong> section.</div>
+  <div class="step"><span class="step-num">3</span>Choose the direction — <strong>Below</strong> (alert when price drops under your threshold) or <strong>Above</strong> (alert when price rises above it).</div>
+  <div class="step"><span class="step-num">4</span>Enter the threshold price and tap <strong>Save</strong>.</div>
+  <p>A 🔔 indicator appears on the holding row to remind you an alert is set.</p>
+
+  <h3>When an alert fires</h3>
+  <p>On the next price refresh, if a holding's live price crosses your threshold in the configured direction, an amber alert banner appears above the portfolio summary card. Tap <strong>✕</strong> to dismiss it.</p>
+
+  <div class="tip"><p>💡 Alerts are checked every time you refresh prices — either by tapping ↻ Refresh or by pulling down on the Holdings screen. They don't fire as background push notifications; they appear while the app is open.</p></div>
+
+  <!-- SPARKLINE -->
+  <h2 id="sparkline">12-Month Portfolio Sparkline</h2>
+  <p>The portfolio summary card at the top of the Holdings screen shows a miniature line chart of your portfolio's performance over the past 12 months, built from the same historical monthly price data used for CAGR and volatility calculations.</p>
+  <ul>
+    <li>The line is <strong>green</strong> when the portfolio has grown over the period and <strong>red</strong> when it has declined</li>
+    <li>The percentage change label shows the 12-month gain or loss</li>
+    <li>The sparkline appears automatically once historical data has been loaded — tap <strong>↻ Refresh</strong> if it's not showing yet</li>
+    <li>It reflects your <em>current</em> holdings weighted at each monthly close — it's a what-if view, not a tracked history</li>
+  </ul>
 
   <!-- SECTIONS -->
   <h2 id="sections">Organising Holdings into Sections <span class="badge pro">Pro</span></h2>
@@ -320,20 +363,28 @@
 
   <!-- PDF EXPORT -->
   <h2 id="pdf-export">Exporting Your Portfolio as a PDF</h2>
-  <p>You can export a formatted PDF report of your entire portfolio — holdings, other assets, liabilities, and a net worth summary — and share or save it anywhere.</p>
-  <div class="step"><span class="step-num">1</span>Scroll to the very bottom of the Portfolio screen.</div>
-  <div class="step"><span class="step-num">2</span>Tap <strong>📄 Export as PDF</strong>.</div>
-  <div class="step"><span class="step-num">3</span>The system share sheet opens — save the PDF to your files, email it, or share it to any app.</div>
+  <p>Tap <strong>📄 Export as PDF</strong> at the bottom of the Portfolio screen to generate a formatted PDF report of your holdings, other assets, liabilities, and net worth. The PDF is generated entirely on-device — no internet required.</p>
+
+  <h3>On iOS</h3>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 Export as PDF</strong>.</div>
+  <div class="step"><span class="step-num">2</span>The native iOS share sheet opens immediately.</div>
+  <div class="step"><span class="step-num">3</span>Choose any destination — <strong>Save to Files</strong>, <strong>WhatsApp</strong>, <strong>Gmail</strong>, <strong>AirDrop</strong>, or any other app. The PDF is attached as a file.</div>
+
+  <h3>On Android</h3>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 Export as PDF</strong>.</div>
+  <div class="step"><span class="step-num">2</span>A folder picker appears — navigate to <strong>Downloads</strong> (or any folder) and tap <strong>Use this folder</strong>.</div>
+  <div class="step"><span class="step-num">3</span>The PDF is saved there instantly. You'll see a confirmation alert.</div>
+  <div class="step"><span class="step-num">4</span>To share it via WhatsApp or Gmail: open your <strong>Files</strong> app → find <code>RetireSmart_Portfolio.pdf</code> → tap <strong>Share</strong> → choose your app.</div>
 
   <p>The PDF report includes:</p>
   <ul>
     <li><strong>Holdings table</strong> — ticker, name, shares, price, and value for each position</li>
     <li><strong>Other Assets table</strong> — name, type, and value</li>
-    <li><strong>Liabilities table</strong> — name, type, balance, and monthly payment</li>
-    <li><strong>Net Worth summary</strong> — total assets, total liabilities, and net worth in a highlighted box</li>
+    <li><strong>Liabilities table</strong> — name, type, and balance</li>
+    <li><strong>Net Worth box</strong> — highlighted in green (or red if negative)</li>
     <li>Date stamp and RetireSmart branding at the top</li>
   </ul>
-  <div class="tip"><p>💡 On Android you can also "Print" the PDF and choose "Save as PDF" from the print dialog for a clean saved copy.</p></div>
+  <div class="tip"><p>💡 The PDF uses standard Helvetica fonts and is compatible with all PDF viewers — Adobe Acrobat, Apple Preview, Google Drive, and more.</p></div>
 
   <!-- NET WORTH GRAPH -->
   <h2 id="net-worth-graph">Net Worth History Graph</h2>
@@ -454,7 +505,30 @@
   <!-- FAMILY -->
   <h2 id="family-overview">Family Overview <span class="badge pro">Pro</span></h2>
   <p>When you have 2 or more family profiles, a <strong>📊 Overview</strong> chip appears at the left of the profile bar. Tap it to see a summary of all members' net worth in one place.</p>
-  <p>The overview shows each member's name, profile type (adult/child), and their last-known cached net worth. It's updated whenever you switch to that member's profile.</p>
+  <p>The overview shows:</p>
+  <ul>
+    <li><strong>Combined Household</strong> card — total family net worth, with an "Adults only" figure if you have child profiles</li>
+    <li>Per-member rows — name, profile type, and last-known net worth for each member</li>
+    <li>Tap any member row to switch to their profile</li>
+  </ul>
+  <p>Net worth figures are updated whenever you switch to a member's profile and prices are refreshed.</p>
+
+  <!-- FAMILY PDF -->
+  <h2 id="family-pdf">Family Report PDF <span class="badge pro">Pro</span></h2>
+  <p>Export a single PDF that shows the full household picture — all members' assets, liabilities, and net worth on one page.</p>
+
+  <div class="step"><span class="step-num">1</span>Tap <strong>📊 Overview</strong> in the profile bar to open the Family Overview modal.</div>
+  <div class="step"><span class="step-num">2</span>Scroll down and tap <strong>📄 Export Family Report as PDF</strong>.</div>
+  <div class="step"><span class="step-num">3</span><strong>iOS:</strong> the native share sheet opens — save or share to any app.<br/><strong>Android:</strong> choose a folder to save the PDF, then share from your Files app.</div>
+
+  <p>The family report includes:</p>
+  <ul>
+    <li><strong>Combined Family Net Worth</strong> box — the household total, with an adults-only subtotal if applicable</li>
+    <li><strong>Individual Breakdown table</strong> — one row per member showing gross assets, liabilities, and net worth</li>
+    <li>Holdings count, other assets count, and liabilities count per member</li>
+    <li>Family Total row at the bottom</li>
+  </ul>
+  <div class="tip"><p>💡 Net worth figures in the family report use each member's last-synced value. Switch to each profile and refresh prices first to ensure all figures are up to date before exporting.</p></div>
 
   <h2 id="add-member">Adding Family Members <span class="badge pro">Pro</span></h2>
   <div class="step"><span class="step-num">1</span>Tap the <strong>+ Add</strong> chip in the profile bar (requires Pro).</div>
@@ -543,6 +617,12 @@
 
   <h3>I switched to a new phone — how do I transfer my data?</h3>
   <p>Data is stored locally and doesn't currently sync between devices. Use the <strong>📄 Export as PDF</strong> function to save a snapshot of your portfolio before switching phones, then re-enter them manually on the new device. Cloud sync is on the roadmap.</p>
+
+  <h3>How do I share the PDF via WhatsApp or Gmail on Android?</h3>
+  <p>On Android, tap Export as PDF, choose a folder (e.g. Downloads), then open your <strong>Files</strong> or <strong>My Files</strong> app. Find <code>RetireSmart_Portfolio.pdf</code>, long-press it, and tap <strong>Share</strong> to send it to any app. On iOS the share sheet opens immediately and you can attach the PDF directly to WhatsApp, Gmail, or any other app in one step.</p>
+
+  <h3>Can I import holdings from a spreadsheet?</h3>
+  <p>Yes — use the <strong>Batch CSV Import</strong> feature. Tap the 📷 camera icon → <strong>Paste list</strong>, then type or paste your holdings in <code>TICKER,SHARES</code> format (one per line). This is the fastest way to import if you already have a list of your positions.</p>
 
   <h3>The "Upgrade to Pro" button isn't working</h3>
   <p>RevenueCat (the payment system) requires a production build to process real payments — it won't work in development/Expo Go mode. Once the app is published on the App Store or Google Play, purchases will work correctly.</p>

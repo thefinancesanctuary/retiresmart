@@ -44,6 +44,7 @@
              border-radius: 6px; padding: 2px 8px; font-size: 12px;
              font-weight: 700; margin-left: 6px; }
     .badge.pro { background: #f59e0b20; color: #92400e; }
+    .badge.family { background: #8b5cf620; color: #5b21b6; }
     .badge.free { background: #e5e5ea; color: #636366; }
     code { background: #f2f6fa; border: 1px solid #e5e5ea; border-radius: 5px;
            padding: 1px 6px; font-size: 13px; font-family: 'SF Mono', monospace; }
@@ -64,7 +65,7 @@
 
 <nav class="sidebar">
   <div class="brand">RetireSmart</div>
-  <div class="version">Complete User Guide · v1.3</div>
+  <div class="version">Complete User Guide · v1.4</div>
   <h2>Getting Started</h2>
   <a href="#overview">App Overview</a>
   <a href="#onboarding">First Launch</a>
@@ -75,11 +76,12 @@
   <a href="#batch-import">Batch CSV Import</a>
   <a href="#edit-holding">Editing Holdings</a>
   <a href="#price-alerts">Price Alerts</a>
-<a href="#sections">Organising Sections</a>
+  <a href="#sections">Organising Sections</a>
   <a href="#other-assets">Other Assets</a>
   <a href="#liabilities">Liabilities</a>
   <a href="#shared-assets">Shared Household</a>
   <a href="#pdf-export">Exporting to PDF</a>
+  <a href="#csv-export">CSV / Excel Export</a>
   <h2>Planner Tab</h2>
   <a href="#net-worth-graph">Net Worth Graph</a>
   <a href="#goal-tab">Goal Planner</a>
@@ -89,14 +91,14 @@
   <a href="#streak">Investment Streak</a>
   <h2>Family Profiles</h2>
   <a href="#family-overview">Family Overview</a>
-  <a href="#family-pdf">Family Report PDF</a>
+  <a href="#family-pdf">Family PDF &amp; CSV</a>
   <a href="#add-member">Adding Members</a>
   <a href="#switching">Switching Profiles</a>
   <a href="#child-profile">Child Profiles</a>
-  <h2>Settings & Account</h2>
+  <h2>Settings &amp; Account</h2>
   <a href="#settings">Settings Screen</a>
   <a href="#theme">Dark / Light Mode</a>
-  <a href="#upgrade">Pro Plan</a>
+  <a href="#upgrade">Plans &amp; Pricing</a>
   <h2>Troubleshooting</h2>
   <a href="#faq">Common Questions</a>
 </nav>
@@ -115,20 +117,21 @@
     <li><strong>Manages your full balance sheet</strong> — assets minus liabilities = your true net worth</li>
     <li><strong>Supports your whole family</strong> — separate profiles for every family member, each with their own plan</li>
   </ol>
-  <div class="tip"><p>💡 Your main profile's holdings, plan, and assets are securely stored in the cloud (Supabase) so they sync across reinstalls and devices. Child/family profiles are stored locally on this device. Your data is never sold or shared with third parties.</p></div>
+  <div class="tip"><p>💡 Your main profile's holdings, plan, and assets are securely stored in the cloud (Supabase) so they sync across reinstalls and devices. Family member profiles are stored locally on this device. Your data is never sold or shared with third parties.</p></div>
 
-  <h3>Free vs Pro</h3>
+  <h3>Free vs Pro vs Family</h3>
   <table>
-    <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
-    <tr><td>Holdings tracked</td><td>Up to 3</td><td>Unlimited</td></tr>
-    <tr><td>Asset types</td><td>Real Estate only</td><td>All types</td></tr>
-    <tr><td>Liabilities</td><td>Mortgage only</td><td>All types</td></tr>
-    <tr><td>Monte Carlo Forecast</td><td>❌</td><td>✅</td></tr>
-    <tr><td>Drawdown Planner</td><td>❌</td><td>✅</td></tr>
-    <tr><td>Family profiles</td><td>1 profile</td><td>Up to 5 profiles</td></tr>
-    <tr><td>Shared Household Assets</td><td>❌</td><td>✅</td></tr>
-    <tr><td>PDF Export</td><td>✅</td><td>✅</td></tr>
-    <tr><td>DCA Reminders</td><td>✅</td><td>✅</td></tr>
+    <tr><th>Feature</th><th>Free</th><th>Pro</th><th>Family</th></tr>
+    <tr><td>Holdings tracked</td><td>Up to 3</td><td>Unlimited</td><td>Unlimited</td></tr>
+    <tr><td>Asset types</td><td>Real Estate only</td><td>All types</td><td>All types</td></tr>
+    <tr><td>Liabilities</td><td>Mortgage only</td><td>All types</td><td>All types</td></tr>
+    <tr><td>Monte Carlo Forecast</td><td>❌</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Drawdown Planner</td><td>❌</td><td>✅</td><td>✅</td></tr>
+    <tr><td>PDF &amp; CSV Export</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>DCA Reminders</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Family profiles</td><td>1 only</td><td>1 only</td><td>Up to 6 total</td></tr>
+    <tr><td>Shared Household Assets</td><td>❌</td><td>❌</td><td>✅</td></tr>
+    <tr><td>Family PDF &amp; CSV Report</td><td>❌</td><td>❌</td><td>✅</td></tr>
   </table>
 
   <!-- FIRST LAUNCH -->
@@ -150,8 +153,8 @@
   <p>Within the <strong>Planner</strong> tab there are three sub-tabs:</p>
   <ul>
     <li><strong>Goal</strong> — Set your retirement target and inputs</li>
-    <li><strong>Forecast</strong> — Monte Carlo simulation <span class="badge pro">Pro</span></li>
-    <li><strong>Retirement</strong> — Drawdown calculator <span class="badge pro">Pro</span></li>
+    <li><strong>Forecast</strong> — Monte Carlo simulation <span class="badge pro">Pro / Family</span></li>
+    <li><strong>Retirement</strong> — Drawdown calculator <span class="badge pro">Pro / Family</span></li>
   </ul>
 
   <!-- HOLDINGS -->
@@ -178,7 +181,7 @@
   </table>
 
   <!-- SCREENSHOT IMPORT -->
-  <h2 id="screenshot-import">Importing Holdings from a Screenshot <span class="badge pro">Pro</span></h2>
+  <h2 id="screenshot-import">Importing Holdings from a Screenshot <span class="badge pro">Pro / Family</span></h2>
   <p>Instead of typing each ticker manually, you can photograph or upload a screenshot of your broker's portfolio page and RetireSmart will extract all positions automatically using AI.</p>
 
   <div class="step"><span class="step-num">1</span>On the Portfolio screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
@@ -191,7 +194,7 @@
   <div class="warning"><p>⚠️ The AI import uses Google Gemini Vision. It reads ticker symbols and share counts but does NOT import prices — prices are always fetched live from Yahoo Finance.</p></div>
 
   <!-- BATCH CSV IMPORT -->
-  <h2 id="batch-import">Batch Import via CSV Paste <span class="badge pro">Pro</span></h2>
+  <h2 id="batch-import">Batch Import via CSV Paste <span class="badge pro">Pro / Family</span></h2>
   <p>If you already know your tickers and share counts, you can paste a comma-separated list to import multiple holdings at once — no screenshot or camera needed.</p>
 
   <div class="step"><span class="step-num">1</span>On the Portfolio screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
@@ -256,8 +259,8 @@
   <div class="tip"><p>💡 Alerts are checked every time you refresh prices — either by tapping ↻ Refresh or by pulling down on the Holdings screen. They don't fire as background push notifications; they appear while the app is open.</p></div>
 
   <!-- SECTIONS -->
-  <h2 id="sections">Organising Holdings into Sections <span class="badge pro">Pro</span></h2>
-  <p>Pro users can group holdings into labelled sections — e.g. "US Stocks", "Singapore", "Crypto", "Retirement Accounts".</p>
+  <h2 id="sections">Organising Holdings into Sections <span class="badge pro">Pro / Family</span></h2>
+  <p>Pro and Family users can group holdings into labelled sections — e.g. "US Stocks", "Singapore", "Crypto", "Retirement Accounts".</p>
 
   <h3>Add a section</h3>
   <ol>
@@ -289,14 +292,14 @@
   <table>
     <tr><th>Type</th><th>Icon</th><th>Examples</th><th>Plan</th></tr>
     <tr><td>Real Estate</td><td>🏠</td><td>Home, investment property</td><td><span class="badge free">Free</span></td></tr>
-    <tr><td>Cash &amp; Bank</td><td>💵</td><td>Savings, fixed deposits</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>CPF / Retirement Fund</td><td>🏦</td><td>CPF OA/SA, EPF, 401k</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Bonds</td><td>📄</td><td>Government bonds, SGS</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Pension</td><td>🏛️</td><td>Defined benefit pension</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Business</td><td>🏢</td><td>Shares in a private company</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Crypto</td><td>₿</td><td>Bitcoin, Ethereum</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Collectibles</td><td>🎨</td><td>Art, watches, wine</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Custom</td><td>📋</td><td>Anything else</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Cash &amp; Bank</td><td>💵</td><td>Savings, fixed deposits</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>CPF / Retirement Fund</td><td>🏦</td><td>CPF OA/SA, EPF, 401k</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Bonds</td><td>📄</td><td>Government bonds, SGS</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Pension</td><td>🏛️</td><td>Defined benefit pension</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Business</td><td>🏢</td><td>Shares in a private company</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Crypto</td><td>₿</td><td>Bitcoin, Ethereum</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Collectibles</td><td>🎨</td><td>Art, watches, wine</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Custom</td><td>📋</td><td>Anything else</td><td><span class="badge pro">Pro / Family</span></td></tr>
   </table>
 
   <h3>How to add an Other Asset</h3>
@@ -316,11 +319,11 @@
   <table>
     <tr><th>Type</th><th>Icon</th><th>Examples</th><th>Plan</th></tr>
     <tr><td>Mortgage</td><td>🏠</td><td>Home loan, apartment loan</td><td><span class="badge free">Free</span></td></tr>
-    <tr><td>Taxes</td><td>🧾</td><td>Income tax, property tax</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Car Loan</td><td>🚗</td><td>Vehicle financing</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Student Loan</td><td>🎓</td><td>University, study loans</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Credit Card</td><td>💳</td><td>Outstanding card balance</td><td><span class="badge pro">Pro</span></td></tr>
-    <tr><td>Custom</td><td>📋</td><td>Any other debt</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Taxes</td><td>🧾</td><td>Income tax, property tax</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Car Loan</td><td>🚗</td><td>Vehicle financing</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Student Loan</td><td>🎓</td><td>University, study loans</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Credit Card</td><td>💳</td><td>Outstanding card balance</td><td><span class="badge pro">Pro / Family</span></td></tr>
+    <tr><td>Custom</td><td>📋</td><td>Any other debt</td><td><span class="badge pro">Pro / Family</span></td></tr>
   </table>
 
   <h3>How to add a liability</h3>
@@ -332,11 +335,11 @@
   <div class="tip"><p>💡 Liabilities are subtracted from your total assets to calculate net worth. The liabilities pie chart (📊) shows how your debt is split by category.</p></div>
 
   <!-- SHARED ASSETS -->
-  <h2 id="shared-assets">Shared Household Assets <span class="badge pro">Pro</span></h2>
+  <h2 id="shared-assets">Shared Household Assets <span class="badge family">Family</span></h2>
   <p>Shared Household is a special section visible to <em>all</em> family members — for assets jointly owned across the family, like a family home or a joint investment account. Unlike regular assets, you can assign a precise ownership percentage to each member — so a 60/40 split or even 100/0 (where one member has no share) is fully supported.</p>
 
   <h3>How to add a shared asset</h3>
-  <div class="step"><span class="step-num">1</span>You must have 2 or more family profiles and be on Pro.</div>
+  <div class="step"><span class="step-num">1</span>You must have 2 or more family profiles and be on the Family plan.</div>
   <div class="step"><span class="step-num">2</span>Go to the <strong>Portfolio</strong> tab and scroll to <strong>🏠 Shared Household</strong> (between Other Assets and Liabilities).</div>
   <div class="step"><span class="step-num">3</span>Tap <strong>+ Add Shared Asset</strong>. A bottom sheet modal opens.</div>
   <div class="step"><span class="step-num">4</span>Enter the <strong>asset name</strong> (e.g. "Family Home") and the <strong>total value</strong>.</div>
@@ -351,28 +354,57 @@
 
   <!-- PDF EXPORT -->
   <h2 id="pdf-export">Exporting Your Portfolio as a PDF</h2>
-  <p>Tap <strong>📄 Export as PDF</strong> at the bottom of the Portfolio screen to generate a formatted PDF report of your holdings, other assets, liabilities, and net worth. The PDF is generated entirely on-device — no internet required.</p>
+  <p>Scroll to the bottom of the <strong>Portfolio</strong> screen to find the export buttons. The PDF is generated entirely on-device — no internet required.</p>
 
-  <h3>On iOS</h3>
-  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 Export as PDF</strong>.</div>
-  <div class="step"><span class="step-num">2</span>The native iOS share sheet opens immediately.</div>
-  <div class="step"><span class="step-num">3</span>Choose any destination — <strong>Save to Files</strong>, <strong>WhatsApp</strong>, <strong>Gmail</strong>, <strong>AirDrop</strong>, or any other app. The PDF is attached as a file.</div>
+  <p>The button label changes based on your plan:</p>
+  <ul>
+    <li><strong>📄 PDF</strong> — Solo users (Pro plan or Free)</li>
+    <li><strong>📄 Family PDF</strong> — Family plan users with 2+ profiles. Generates one A4 page per family member, all in a single PDF file.</li>
+  </ul>
 
   <h3>On Android</h3>
-  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 Export as PDF</strong>.</div>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 PDF</strong> (or <strong>📄 Family PDF</strong>).</div>
   <div class="step"><span class="step-num">2</span>A folder picker appears — navigate to <strong>Downloads</strong> (or any folder) and tap <strong>Use this folder</strong>.</div>
   <div class="step"><span class="step-num">3</span>The PDF is saved there instantly. You'll see a confirmation alert.</div>
-  <div class="step"><span class="step-num">4</span>To share it via WhatsApp or Gmail: open your <strong>Files</strong> app → find <code>RetireSmart_Portfolio.pdf</code> → tap <strong>Share</strong> → choose your app.</div>
+  <div class="step"><span class="step-num">4</span>To share it via WhatsApp or Gmail: open your <strong>Files</strong> app → find the PDF → tap <strong>Share</strong> → choose your app.</div>
 
-  <p>The PDF report includes:</p>
+  <h3>On iOS</h3>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen and tap <strong>📄 PDF</strong> (or <strong>📄 Family PDF</strong>).</div>
+  <div class="step"><span class="step-num">2</span>The native iOS share sheet opens immediately.</div>
+  <div class="step"><span class="step-num">3</span>Choose any destination — <strong>Save to Files</strong>, <strong>WhatsApp</strong>, <strong>Gmail</strong>, <strong>AirDrop</strong>, or any other app.</div>
+
+  <p>Each page of the PDF includes:</p>
   <ul>
+    <li><strong>Member name header</strong> — identifies whose data is on that page (Family PDF)</li>
     <li><strong>Holdings table</strong> — ticker, name, shares, price, and value for each position</li>
     <li><strong>Other Assets table</strong> — name, type, and value</li>
     <li><strong>Liabilities table</strong> — name, type, and balance</li>
     <li><strong>Net Worth box</strong> — highlighted in green (or red if negative)</li>
     <li>Date stamp and RetireSmart branding at the top</li>
   </ul>
-  <div class="tip"><p>💡 The PDF uses standard Helvetica fonts and is compatible with all PDF viewers — Adobe Acrobat, Apple Preview, Google Drive, and more.</p></div>
+  <div class="tip"><p>💡 For the Family PDF, prices for all members' tickers are fetched automatically so every page is up to date. Switch to each member's profile and refresh prices first for the most accurate figures.</p></div>
+
+  <!-- CSV EXPORT -->
+  <h2 id="csv-export">CSV / Excel Export</h2>
+  <p>Export your portfolio data as a CSV file that opens directly in Excel, Google Sheets, or any spreadsheet app.</p>
+
+  <p>The button label changes based on your plan:</p>
+  <ul>
+    <li><strong>📊 CSV / Excel</strong> — Solo users (Pro plan or Free)</li>
+    <li><strong>📊 Family CSV</strong> — Family plan users with 2+ profiles. Exports all members' data in one file with a "Member" column so you can filter by person in Excel.</li>
+  </ul>
+
+  <h3>How to export</h3>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>📊 CSV / Excel</strong> (or <strong>📊 Family CSV</strong>).</div>
+  <div class="step"><span class="step-num">3</span><strong>Android:</strong> choose a folder to save the file, then open it from your Files app or share to Google Sheets.<br/><strong>iOS:</strong> the share sheet opens — save to Files or send directly to any app.</div>
+
+  <h3>CSV format</h3>
+  <p><strong>Solo export columns:</strong> <code>Section, Name, Ticker, Shares, Price, Value</code></p>
+  <p><strong>Family export columns:</strong> <code>Member, Section, Name, Ticker, Shares, Price, Value</code></p>
+  <p>Each row represents one holding, other asset, or liability. Sections are labelled so you can filter or sort by asset type in your spreadsheet.</p>
+
+  <div class="tip"><p>💡 Open the CSV in Google Sheets to create your own charts and net worth dashboards using the exported data.</p></div>
 
   <!-- NET WORTH GRAPH -->
   <h2 id="net-worth-graph">Net Worth History Graph</h2>
@@ -434,7 +466,7 @@
   </ul>
 
   <!-- FORECAST -->
-  <h2 id="forecast-tab">Forecast — Monte Carlo Simulation <span class="badge pro">Pro</span></h2>
+  <h2 id="forecast-tab">Forecast — Monte Carlo Simulation <span class="badge pro">Pro / Family</span></h2>
   <p>Monte Carlo simulation runs 1,000 random market scenarios using the historical volatility and return of your actual holdings. It shows you the <em>range</em> of possible outcomes — not just one average number.</p>
 
   <h3>How to read the results</h3>
@@ -451,7 +483,7 @@
   <p>Each simulation randomly samples monthly returns from a log-normal distribution calibrated to your portfolio's weighted average return (CAGR) and annual standard deviation (volatility). These are calculated from 5 years of monthly historical prices for each holding you own.</p>
 
   <!-- DRAWDOWN -->
-  <h2 id="drawdown-tab">Retirement Drawdown Calculator <span class="badge pro">Pro</span></h2>
+  <h2 id="drawdown-tab">Retirement Drawdown Calculator <span class="badge pro">Pro / Family</span></h2>
   <p>The Drawdown tab answers: <em>"If I retire with $X, how long will my money last?"</em> It's the flip side of the accumulation phase — now you're spending, not saving.</p>
 
   <h3>Inputs</h3>
@@ -491,7 +523,7 @@
   </ul>
 
   <!-- FAMILY -->
-  <h2 id="family-overview">Family Overview <span class="badge pro">Pro</span></h2>
+  <h2 id="family-overview">Family Overview <span class="badge family">Family</span></h2>
   <p>When you have 2 or more family profiles, a <strong>📊 Overview</strong> chip appears at the left of the profile bar. Tap it to see a summary of all members' net worth in one place.</p>
   <p>The overview shows:</p>
   <ul>
@@ -502,28 +534,41 @@
   <p>Net worth figures are updated whenever you switch to a member's profile and prices are refreshed.</p>
 
   <!-- FAMILY PDF -->
-  <h2 id="family-pdf">Family Report PDF <span class="badge pro">Pro</span></h2>
-  <p>Export a single PDF that shows the full household picture — all members' assets, liabilities, and net worth on one page.</p>
+  <h2 id="family-pdf">Family PDF &amp; CSV Report <span class="badge family">Family</span></h2>
+  <p>Family plan users with 2 or more profiles get dedicated family export buttons at the bottom of the Portfolio screen. These export <em>all</em> members' data in a single file — one page per member in the PDF, or a combined spreadsheet in the CSV.</p>
 
-  <div class="step"><span class="step-num">1</span>Tap <strong>📊 Overview</strong> in the profile bar to open the Family Overview modal.</div>
-  <div class="step"><span class="step-num">2</span>Scroll down and tap <strong>📄 Export Family Report as PDF</strong>.</div>
-  <div class="step"><span class="step-num">3</span><strong>iOS:</strong> the native share sheet opens — save or share to any app.<br/><strong>Android:</strong> choose a folder to save the PDF, then share from your Files app.</div>
+  <h3>Family PDF — one page per member</h3>
+  <div class="step"><span class="step-num">1</span>Go to the <strong>Portfolio</strong> tab and scroll to the very bottom.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>📄 Family PDF</strong>.</div>
+  <div class="step"><span class="step-num">3</span><strong>Android:</strong> choose a folder to save. <strong>iOS:</strong> the share sheet opens.</div>
 
-  <p>The family report includes:</p>
+  <p>The family PDF includes one A4 page per member, each showing:</p>
   <ul>
-    <li><strong>Combined Family Net Worth</strong> box — the household total, with an adults-only subtotal if applicable</li>
-    <li><strong>Individual Breakdown table</strong> — one row per member showing gross assets, liabilities, and net worth</li>
-    <li>Holdings count, other assets count, and liabilities count per member</li>
-    <li>Family Total row at the bottom</li>
+    <li>Member name in a coloured header bar</li>
+    <li>Investment Portfolio table (holdings, shares, price, value)</li>
+    <li>Other Assets table</li>
+    <li>Liabilities table</li>
+    <li>Net Worth summary box (green if positive, red if negative)</li>
   </ul>
-  <div class="tip"><p>💡 Net worth figures in the family report use each member's last-synced value. Switch to each profile and refresh prices first to ensure all figures are up to date before exporting.</p></div>
 
-  <h2 id="add-member">Adding Family Members <span class="badge pro">Pro</span></h2>
-  <div class="step"><span class="step-num">1</span>Tap the <strong>+ Add</strong> chip in the profile bar (requires Pro).</div>
-  <div class="step"><span class="step-num">2</span>Enter a name for the new profile (e.g. "Spouse", "Sarah").</div>
-  <div class="step"><span class="step-num">3</span>Choose <strong>Adult</strong> or <strong>Child</strong>.</div>
-  <div class="step"><span class="step-num">4</span>Tap <strong>Add Profile</strong>. The app immediately switches to the new profile with a clean starting point.</div>
+  <h3>Family CSV — all members in one spreadsheet</h3>
+  <div class="step"><span class="step-num">1</span>Scroll to the bottom of the Portfolio screen.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>📊 Family CSV</strong>.</div>
+  <div class="step"><span class="step-num">3</span>Save or share the file. Open in Excel or Google Sheets.</div>
+
+  <p>The family CSV has a <code>Member</code> column as the first field so you can filter by person in your spreadsheet. Use Excel's filter or pivot table to compare holdings across family members.</p>
+
+  <div class="tip"><p>💡 Prices for all members are fetched automatically when you export — you don't need to manually switch to each profile first. For the most accurate figures, refresh prices for each profile before exporting.</p></div>
+
+  <h2 id="add-member">Adding Family Members <span class="badge family">Family</span></h2>
+  <div class="step"><span class="step-num">1</span>Tap the <strong>🔒 Add</strong> chip in the profile bar (requires Family plan). You'll be taken to the upgrade screen if you're on Free or Pro.</div>
+  <div class="step"><span class="step-num">2</span>A modal opens with a name input field. Type a name for the new profile (e.g. "Spouse", "Sarah").</div>
+  <div class="step"><span class="step-num">3</span><strong>Add an emoji</strong> — tap the 😊 button next to the name field to open the emoji picker. Two rows of emoji appear. Tap any emoji to append it to the name (e.g. "Sarah 💙"). Tap the button again to hide the picker.</div>
+  <div class="step"><span class="step-num">4</span>Choose <strong>Adult</strong> or <strong>Child</strong>.</div>
+  <div class="step"><span class="step-num">5</span>Tap <strong>Add Profile</strong>. The app immediately switches to the new profile with a clean starting point.</div>
   <p>Each profile has its own completely separate holdings, assets, liabilities, and retirement plan. Switching profiles saves the current one and loads the new one instantly.</p>
+
+  <div class="tip"><p>💡 You can also rename any existing profile — tap <strong>📊 Overview</strong> in the profile bar, tap the ✎ edit icon next to a member's name, and the same name input with emoji picker will open.</p></div>
 
   <h2 id="switching">Switching Between Profiles</h2>
   <p>Tap any name chip in the profile bar at the top of the screen. The app saves your current profile and loads the selected one. You can also rename or delete profiles from the <strong>📊 Overview</strong> modal.</p>
@@ -544,7 +589,7 @@
   <h2 id="settings">Settings Screen</h2>
   <p>Tap <strong>Settings</strong> in the main tab bar to access:</p>
   <ul>
-    <li><strong>Subscription status</strong> — shows Free or Pro, with an Upgrade button for free users</li>
+    <li><strong>Subscription status</strong> — shows Free, Pro, or Family, with an Upgrade button for free users</li>
     <li><strong>Dark Mode toggle</strong> — switch between light and dark themes</li>
     <li><strong>User Guide</strong> — opens this guide in your browser</li>
     <li><strong>Privacy Policy</strong> — opens in your browser</li>
@@ -558,21 +603,30 @@
   <p>RetireSmart fully supports both dark and light mode. Toggle it in <strong>Settings → Dark Mode</strong>. Your preference is saved and restored on every launch.</p>
 
   <!-- UPGRADE -->
-  <h2 id="upgrade">Upgrading to Pro</h2>
-  <p>Tap <strong>Upgrade</strong> in Settings, or tap the upgrade banner on the Portfolio screen, or tap the 🔒 lock on any Pro feature.</p>
+  <h2 id="upgrade">Plans &amp; Pricing</h2>
+  <p>Tap <strong>Upgrade</strong> in Settings, or tap the upgrade banner on the Portfolio screen, or tap the 🔒 lock on any premium feature.</p>
 
   <h3>Pricing</h3>
   <table>
-    <tr><th>Plan</th><th>Monthly</th><th>Annual (save 40%)</th><th>Lifetime</th></tr>
-    <tr><td>Solo (1 person)</td><td>$9.99/mo</td><td>$5.99/mo ($71.88/yr)</td><td>$299</td></tr>
-    <tr><td>Family 2</td><td>$15.99/mo</td><td>$9.59/mo ($115.08/yr)</td><td>$499</td></tr>
-    <tr><td>Family 3</td><td>$21.99/mo</td><td>$13.19/mo ($158.28/yr)</td><td>$599</td></tr>
-    <tr><td>Family 4+</td><td>$26.99/mo</td><td>$16.19/mo ($194.28/yr)</td><td>$749</td></tr>
+    <tr><th>Plan</th><th>Monthly</th><th>Annual</th><th>Lifetime</th></tr>
+    <tr>
+      <td><strong>Pro</strong> <span style="font-size:12px;color:#636366;">1 person</span></td>
+      <td>$12.99/mo</td>
+      <td>$7.99/mo <span style="font-size:12px;color:#636366;">($95.88/yr)</span></td>
+      <td>$299.99</td>
+    </tr>
+    <tr>
+      <td><strong>Family</strong> <span style="font-size:12px;color:#636366;">up to 6 people</span></td>
+      <td>$21.99/mo</td>
+      <td>$12.99/mo <span style="font-size:12px;color:#636366;">($155.88/yr, 7-day free trial)</span></td>
+      <td>$449.99</td>
+    </tr>
   </table>
-  <p>The paywall lets you select Solo or Family, pick the number of members, and choose monthly, annual, or lifetime billing. The annual plan saves 40%. The lifetime plan is a one-time payment — yours forever.</p>
+  <p><strong>Pro</strong> gives one person unlimited holdings, all asset types, Monte Carlo forecast, and the drawdown calculator. <strong>Family</strong> includes all Pro features plus up to 6 separate profiles, shared household assets, and the per-member Family PDF &amp; CSV export.</p>
+  <p>Annual plans save approximately 38% compared to monthly. The Lifetime plan is a one-time payment — yours forever with all future updates. Family Annual includes a <strong>7-day free trial</strong> (credit card required, cancel anytime before the trial ends).</p>
 
   <h3>Restoring purchases</h3>
-  <p>If you reinstall the app or switch phones, tap <strong>Restore purchases</strong> at the bottom of the paywall to recover your Pro access.</p>
+  <p>If you reinstall the app or switch phones, tap <strong>Restore purchases</strong> at the bottom of the paywall to recover your Pro or Family access.</p>
 
   <!-- FAQ -->
   <h2 id="faq">Common Questions</h2>
@@ -596,16 +650,16 @@
   <p>Your main profile data (holdings, plan, assets) is stored in our secure cloud database. To delete your account and all associated data, email <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a> with the subject "Account Deletion Request" and we will permanently remove your data within 30 days. You can sign out at any time via <strong>Portfolio → Sign out</strong>.</p>
 
   <h3>I switched to a new phone — how do I transfer my data?</h3>
-  <p>Your main profile (holdings, plan, assets, liabilities) is stored in the cloud and will restore automatically when you sign in on your new phone. Family member and child profiles are stored locally on the device — use <strong>📄 Export as PDF</strong> to save a snapshot of those profiles before switching, then re-enter them manually.</p>
+  <p>Your main profile (holdings, plan, assets, liabilities) is stored in the cloud and will restore automatically when you sign in on your new phone. Family member and child profiles are stored locally on the device — use <strong>📄 Family PDF</strong> or <strong>📊 Family CSV</strong> to save a snapshot before switching, then re-enter them on the new phone.</p>
 
   <h3>How do I share the PDF via WhatsApp or Gmail on Android?</h3>
-  <p>On Android, tap Export as PDF, choose a folder (e.g. Downloads), then open your <strong>Files</strong> or <strong>My Files</strong> app. Find <code>RetireSmart_Portfolio.pdf</code>, long-press it, and tap <strong>Share</strong> to send it to any app. On iOS the share sheet opens immediately and you can attach the PDF directly to WhatsApp, Gmail, or any other app in one step.</p>
+  <p>On Android, tap the export button, choose a folder (e.g. Downloads), then open your <strong>Files</strong> or <strong>My Files</strong> app. Find the PDF, long-press it, and tap <strong>Share</strong> to send it to any app. On iOS the share sheet opens immediately and you can attach the PDF directly to WhatsApp, Gmail, or any other app in one step.</p>
 
   <h3>Can I import holdings from a spreadsheet?</h3>
   <p>Yes — use the <strong>Batch CSV Import</strong> feature. Tap the 📷 camera icon → <strong>Paste list</strong>, then type or paste your holdings in <code>TICKER,SHARES</code> format (one per line). This is the fastest way to import if you already have a list of your positions.</p>
 
   <h3>The "Upgrade to Pro" button isn't working</h3>
-  <p>RevenueCat (the payment system) requires a production build to process real payments — it won't work in development/Expo Go mode. Once the app is published on the App Store or Google Play, purchases will work correctly.</p>
+  <p>RevenueCat (the payment system) requires a production build to process real payments — it won't work in development/Expo Go mode. Once the app is published on Google Play, purchases will work correctly.</p>
 
   <h3>How do I cancel my subscription?</h3>
   <p>Subscriptions are managed by Google Play or the Apple App Store. To cancel:</p>
@@ -614,8 +668,11 @@
     <li><strong>iOS</strong>: Settings → Apple ID → Subscriptions → RetireSmart → Cancel</li>
   </ul>
 
+  <h3>What is the difference between Pro and Family?</h3>
+  <p><strong>Pro</strong> is a single-person plan — one profile with all premium features (unlimited holdings, Monte Carlo, drawdown calculator, PDF/CSV export). <strong>Family</strong> adds up to 6 separate profiles, shared household assets with custom ownership splits, and the per-member Family PDF &amp; CSV export. If you're the only user, Pro is the right choice. If you want to track your whole household in one app, choose Family.</p>
+
   <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid #e5e5ea;">
-    <p style="color: #8e8e93; font-size: 13px;">RetireSmart User Guide · For support, email <a href="mailto:thefinancesanctuary@gmail.com" style="color: #0bc887;">thefinancesanctuary@gmail.com</a></p>
+    <p style="color: #8e8e93; font-size: 13px;">RetireSmart User Guide v1.4 · For support, email <a href="mailto:thefinancesanctuary@gmail.com" style="color: #0bc887;">thefinancesanctuary@gmail.com</a></p>
     <p style="color: #8e8e93; font-size: 12px; margin-top: 4px;">This guide is for educational purposes. RetireSmart does not provide financial advice.</p>
   </div>
 

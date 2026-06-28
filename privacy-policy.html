@@ -6,86 +6,176 @@
   <title>RetireSmart – Privacy Policy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
            color: #1c1c1e; background: #f2f6fa; padding: 24px 16px 60px; }
-    .card { background: #fff; border-radius: 16px; padding: 24px;
-            max-width: 720px; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
-    .updated { font-size: 13px; color: #8e8e93; margin-bottom: 28px; }
-    h2 { font-size: 16px; font-weight: 700; margin: 24px 0 8px; color: #1c1c1e; }
-    p, li { font-size: 14px; line-height: 1.65; color: #3a3a3c; }
-    ul { padding-left: 20px; margin-top: 6px; }
-    li { margin-bottom: 4px; }
+    .card { background: #fff; border-radius: 16px; padding: 28px 28px 36px;
+            max-width: 740px; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; color: #1c1c1e; }
+    .updated { font-size: 13px; color: #8e8e93; margin-bottom: 10px; }
+    .tagline { font-size: 14px; color: #3a3a3c; line-height: 1.65; margin-bottom: 28px; }
+    h2 { font-size: 15px; font-weight: 700; margin: 28px 0 8px; color: #1c1c1e;
+         padding-top: 20px; border-top: 1px solid #e5e5ea; }
+    h2:first-of-type { border-top: none; margin-top: 8px; }
+    p { font-size: 14px; line-height: 1.7; color: #3a3a3c; margin-bottom: 10px; }
+    ul { padding-left: 20px; margin: 6px 0 10px; }
+    li { font-size: 14px; line-height: 1.7; color: #3a3a3c; margin-bottom: 6px; }
     a { color: #0bc887; text-decoration: none; }
-    .disclaimer { background: #fff3cd; border-left: 4px solid #f59e0b;
-                  border-radius: 8px; padding: 14px 16px; margin-top: 28px; }
-    .disclaimer p { color: #92400e; font-size: 13px; }
+    a:hover { text-decoration: underline; }
+    .highlight { background: #f0fdf8; border-left: 4px solid #0bc887;
+                 border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
+    .highlight p { color: #065f46; font-size: 14px; margin: 0; }
+    .disclaimer { background: #fff8e6; border-left: 4px solid #f59e0b;
+                  border-radius: 8px; padding: 14px 16px; margin-top: 32px; }
+    .disclaimer p { color: #92400e; font-size: 13px; margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; }
+    th { background: #f2f6fa; font-size: 11px; font-weight: 700; text-transform: uppercase;
+         letter-spacing: 0.6px; color: #636366; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; font-size: 13px; border-bottom: 1px solid #e5e5ea; color: #3a3a3c; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Privacy Policy</h1>
-    <p class="updated">RetireSmart · Last updated: June 2026</p>
+    <p class="updated">RetireSmart &nbsp;·&nbsp; Last updated: June 2026</p>
+    <p class="tagline">RetireSmart ("we", "us", "our") is committed to protecting your privacy. This policy explains exactly what data the app collects, why, how it is stored, and your rights over it.</p>
 
-    <p>RetireSmart ("we", "us", "our") is committed to protecting your privacy. This policy explains what information the app collects, how it is used, and your rights.</p>
+    <div class="highlight">
+      <p><strong>Short version:</strong> We collect only what is necessary to run the app — your email for sign-in, your financial data for cloud sync, and screenshots only when you choose to import them. We never sell your data, use it for advertising, or share it with third parties except the services listed below.</p>
+    </div>
 
-    <h2>1. Data We Collect</h2>
+    <h2>1. Who We Are</h2>
+    <p>RetireSmart is an Android personal finance and retirement planning application published on Google Play by The Finance Sanctuary. You can contact us at <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a>.</p>
+
+    <h2>2. What Data We Collect and Why</h2>
+    <table>
+      <tr>
+        <th>Data</th>
+        <th>Why we collect it</th>
+        <th>Where it is stored</th>
+      </tr>
+      <tr>
+        <td><strong>Email address</strong></td>
+        <td>Account creation, sign-in, and account recovery</td>
+        <td>Supabase (cloud, encrypted at rest)</td>
+      </tr>
+      <tr>
+        <td><strong>Financial data</strong> — holdings, net worth, retirement goals, assets, liabilities, family profiles</td>
+        <td>To run portfolio tracking, retirement planning, and sync your data across reinstalls and devices</td>
+        <td>Supabase (cloud, encrypted at rest)</td>
+      </tr>
+      <tr>
+        <td><strong>Photos / screenshots</strong></td>
+        <td>Only when you tap "Import from screenshot" — to extract holding positions using AI. Transmitted securely to our server-side proxy and then to Google Gemini Vision API. <strong>Not stored after processing.</strong></td>
+        <td>Not stored — processed in transit only</td>
+      </tr>
+      <tr>
+        <td><strong>Ticker symbols</strong></td>
+        <td>To fetch live stock and ETF prices from Yahoo Finance. No personal data is included in these requests.</td>
+        <td>Not stored — real-time API calls only</td>
+      </tr>
+      <tr>
+        <td><strong>Purchase receipts</strong></td>
+        <td>To verify subscription status and entitlements via RevenueCat</td>
+        <td>RevenueCat servers (subject to their privacy policy)</td>
+      </tr>
+    </table>
+
+    <h2>3. What We Do Not Collect</h2>
     <ul>
-      <li><strong>Email address</strong> — collected when you create an account. Used for authentication and account recovery only.</li>
-      <li><strong>Display name</strong> — optional name you provide during sign-up. Stored in your account profile.</li>
-      <li><strong>Financial data</strong> — holdings, net worth, retirement goals, liabilities, other assets, and family member profiles. Synced to our secure cloud database (Supabase) so your data is available across devices and restored after reinstalls.</li>
-      <li><strong>Photos / screenshots</strong> — only accessed when you choose to use the AI holdings import feature. The image is sent to our server (Supabase Edge Function), which forwards it to Google Gemini for analysis. Images are processed in real time and are never stored on our servers or Google's servers beyond the duration of the request.</li>
-      <li><strong>Stock price data</strong> — ticker symbols are sent to Yahoo Finance (for international stocks) or via our Supabase Edge Function proxy to Finnhub (for US stocks) to fetch live prices. No personal data is included in these requests.</li>
-      <li><strong>Purchase data</strong> — subscription status is managed by RevenueCat and Google Play. We receive only a user identifier and entitlement status; we do not receive or store payment card details.</li>
+      <li>We do not track your precise or approximate location</li>
+      <li>We do not collect your name (only your email)</li>
+      <li>We do not collect analytics, crash reports, or usage telemetry beyond what is inherent to Supabase auth</li>
+      <li>We do not share your data with advertisers or ad networks</li>
+      <li>We do not sell your personal data — ever</li>
     </ul>
 
-    <h2>2. Data We Do Not Collect</h2>
+    <h2>4. Camera and Photo Library Access</h2>
+    <p>The app requests access to your camera and photo library only when you choose to import a holdings screenshot. Specifically:</p>
     <ul>
-      <li>We do not track your location</li>
-      <li>We do not share your personal data with third parties for advertising or analytics</li>
-      <li>We do not sell your data — ever</li>
-      <li>We do not use your financial data for any purpose other than providing the app's features to you</li>
+      <li><strong>Camera</strong> — lets you photograph a broker statement or holdings page directly</li>
+      <li><strong>Photo library</strong> — lets you select an existing screenshot from your gallery</li>
     </ul>
-
-    <h2>3. How We Use Your Data</h2>
-    <ul>
-      <li><strong>Authentication</strong> — your email is used to identify your account and allow you to sign in</li>
-      <li><strong>Cloud sync</strong> — financial data, plans, and family profiles are synced to Supabase so you can access your data from any device and restore it after reinstalling</li>
-      <li><strong>AI holdings import</strong> — screenshots you submit are sent to Google Gemini for ticker and share extraction, then discarded</li>
-      <li><strong>Live prices</strong> — ticker symbols are sent to Yahoo Finance or Finnhub to retrieve current market prices</li>
-    </ul>
-
-    <h2>4. Data Storage and Security</h2>
-    <p>Your financial data and account information are stored in <strong>Supabase</strong>, a secure cloud database provider. All data is transmitted over HTTPS and encrypted at rest. Supabase's security practices are described at <a href="https://supabase.com/security" target="_blank">supabase.com/security</a>.</p>
-    <p>Some app preferences (such as dark/light mode and UI settings) are stored locally on your device and are not synced to the cloud. All financial data, notes, retirement plans, and goals are synced to Supabase and are available across devices.</p>
+    <p>When an image is submitted for import, it is transmitted over HTTPS to our secure server-side proxy, which forwards it to Google Gemini Vision to extract ticker symbols and share counts. The image is <strong>not stored</strong> on our servers or in any database after processing is complete. You can use every other feature of the app without ever granting camera or photo access.</p>
 
     <h2>5. In-App Purchases</h2>
-    <p>RetireSmart uses <strong>RevenueCat</strong> to process in-app subscriptions and one-time purchases through the Google Play Store. Payment processing is handled entirely by Google Play and RevenueCat. We do not store your payment information. RevenueCat's privacy policy applies to purchase data: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>.</p>
+    <p>RetireSmart offers optional Pro and Family subscriptions and a lifetime purchase, processed through <strong>Google Play Billing</strong> via <strong>RevenueCat</strong>. Google handles all payment processing. We do not store your credit card details or payment information. Your subscription status is verified through RevenueCat using a unique anonymous identifier tied to your Google Play account.</p>
+    <p>RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></p>
 
-    <h2>6. Camera and Photo Access</h2>
-    <p>The app requests access to your camera and photo library solely to allow you to photograph or select a screenshot of your investment holdings for AI import. The image is transmitted securely to our server for processing and is not retained after the request is complete.</p>
+    <h2>6. Third-Party Services</h2>
+    <p>The app uses the following third-party services. Each operates under its own privacy policy:</p>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Privacy Policy</th>
+      </tr>
+      <tr>
+        <td><strong>Supabase</strong></td>
+        <td>Cloud database, authentication, and server-side proxy for AI image processing — stores your account and financial data</td>
+        <td><a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Google Gemini (via our proxy)</strong></td>
+        <td>AI vision — extracts holdings from screenshots you submit</td>
+        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Yahoo Finance API</strong></td>
+        <td>Live stock and ETF prices — only ticker symbols are sent, no personal data</td>
+        <td><a href="https://legal.yahoo.com/us/en/yahoo/privacy/index.html" target="_blank" rel="noopener">legal.yahoo.com</a></td>
+      </tr>
+      <tr>
+        <td><strong>RevenueCat</strong></td>
+        <td>Subscription and purchase management via Google Play Billing</td>
+        <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Finnhub (via our proxy)</strong></td>
+        <td>US stock and ETF price data — only ticker symbols are sent via our server-side proxy, no personal data</td>
+        <td><a href="https://finnhub.io/privacy" target="_blank" rel="noopener">finnhub.io/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Firebase / FCM (Google)</strong></td>
+        <td>Push notification delivery — receives an anonymous device token to send DCA reminders. No personal data is associated with this token.</td>
+        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+      </tr>
+    </table>
 
-    <h2>7. Third-Party Services</h2>
+    <h2>7. Data Security</h2>
+    <p>All data transmitted between the app and Supabase is encrypted in transit using HTTPS/TLS. Data stored in Supabase is encrypted at rest. Screenshot images submitted for AI import are transmitted over HTTPS and are not retained after processing. We follow industry-standard security practices to protect your information.</p>
+
+    <h2>8. Data Retention and Account Deletion</h2>
+    <p>Your account and financial data remain in our cloud database (Supabase) for as long as your account is active. You may delete your account and all associated data at any time using either method below:</p>
     <ul>
-      <li><strong>Supabase</strong> — cloud database and authentication. Your account and financial data are stored here. <a href="https://supabase.com/privacy" target="_blank">Privacy policy</a>.</li>
-      <li><strong>Google Gemini</strong> — AI vision model used to extract holdings from screenshots. Images are processed in real time and not stored. <a href="https://policies.google.com/privacy" target="_blank">Google privacy policy</a>.</li>
-      <li><strong>Finnhub</strong> — US stock price data, accessed via our server-side proxy. Only ticker symbols are sent.</li>
-      <li><strong>Yahoo Finance</strong> — international stock price data. Only ticker symbols are sent; no personal data.</li>
-      <li><strong>RevenueCat</strong> — subscription management. Subject to their <a href="https://www.revenuecat.com/privacy" target="_blank">privacy policy</a>.</li>
+      <li><strong>In-app:</strong> Go to <strong>Settings → Account → Delete Account</strong>. This immediately and permanently removes all your data from our servers.</li>
+      <li><strong>By email:</strong> Email <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a> with the subject line <strong>"Account Deletion Request"</strong> and include the email address associated with your account. We will permanently delete your data within <strong>30 days</strong> of receiving your request.</li>
+      <li>You may sign out of the app at any time via <strong>Portfolio → Sign out</strong></li>
+      <li>Uninstalling the app does not automatically delete your cloud data — use one of the deletion methods above to remove your data</li>
     </ul>
 
-    <h2>8. Data Retention and Deletion</h2>
-    <p>You can delete your account and all associated data at any time directly in the app via <strong>Settings → Account → Delete Account</strong>. This permanently removes your account from our authentication system and deletes all financial data, plans, and family profiles from our database. The deletion is immediate and irreversible.</p>
-    <p>Locally stored preferences (dark mode, net worth history) are removed when you uninstall the app.</p>
-
     <h2>9. Children's Privacy</h2>
-    <p>RetireSmart is intended for users aged 13 and older. The child profile feature within the app is for parents to model educational savings goals for their children — it does not collect any data directly from minors.</p>
+    <p>RetireSmart is intended for users aged <strong>13 and older</strong>. Users aged 13–17 may use the app with parental consent. We do not knowingly collect personal information from children under 13. The "child profile" feature within the app is a planning tool for parents and guardians to model education savings goals — it does not collect any data from or about minors, and all data associated with child profiles is entered by the parent or guardian.</p>
+    <p>If you believe a child under 13 has provided personal data through the app, please contact us at <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a> and we will remove it promptly.</p>
 
-    <h2>10. Changes to This Policy</h2>
-    <p>We may update this policy from time to time. We will notify you of significant changes via an in-app notice. The date at the top of this page always reflects the most recent update.</p>
+    <h2>10. Your Privacy Rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal data we hold about you</li>
+      <li><strong>Correct</strong> inaccurate data</li>
+      <li><strong>Delete</strong> your account and all associated data (see Section 8)</li>
+      <li><strong>Portability</strong> — receive a copy of your data in a machine-readable format</li>
+      <li><strong>Object</strong> to processing of your data</li>
+    </ul>
+    <p>To exercise any of these rights, email <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a>. We will respond within 30 days.</p>
 
-    <h2>11. Contact Us</h2>
-    <p>If you have any questions about this privacy policy, please contact us at: <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a></p>
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. When we make significant changes, we will update the "Last updated" date at the top of this page and may notify you via an in-app notice. Continued use of the app after changes are posted constitutes your acceptance of the revised policy.</p>
+
+    <h2>12. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this privacy policy or your personal data, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:thefinancesanctuary@gmail.com">thefinancesanctuary@gmail.com</a></p>
+    <p>We aim to respond to all privacy-related inquiries within 5 business days.</p>
 
     <div class="disclaimer">
       <p><strong>Financial Disclaimer:</strong> RetireSmart is a personal finance tracking and planning tool for educational purposes only. It does not constitute financial advice, investment advice, or any form of professional financial service. The projections, Monte Carlo simulations, and retirement estimates shown in the app are illustrative models based on your inputs — they are not guarantees of future performance. Always consult a qualified financial advisor before making investment or retirement decisions.</p>
